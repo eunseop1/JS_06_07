@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 연습</title>
+
+<script type="text/javascript">
+	var obj1 = {};
+	var obj2 = new Object();
+	
+	document.write(typeof(obj1) + " : " + obj1 + "<br>");
+	document.write(typeof(obj2) + " : " + obj2 + "<br><hr>");
+
+	object = {name : "한사람", age : 33};
+	//json과는 달리 키에 따음표가 없어도 된다
+	object.toString = function(){
+		return this.name + "(" + this.age + "세)";//오버라이팅 된다
+	}
+	
+	document.write("<ul>");
+	for(key in object){
+		document.write("<li>" + key + " : " + object[key] + "</li>");
+		
+	}
+	document.write("</ul><hr>");
+
+	document.write(object);
+	
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

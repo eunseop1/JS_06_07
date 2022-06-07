@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 연습</title>
+
+<script type="text/javascript">
+	var a = 123;
+	var b = new Number(123);
+	
+	document.write(typeof(a) + " : " + a + "<hr>");
+	//넘버 타입
+	document.write(typeof(b) + " : " + b + "<hr>");// 오브젝트 타입
+	
+	document.write(a.toString() + "<br>");
+	document.write(b.toString() + "<br>");
+
+	/*
+	a.method = function(){
+		return "기본타입에 메서드 추가";
+	}
+	document.write(a.method() + "<br>"); // 이건 작동되지 않는다
+	*/
+	
+	Number.prototype.method = function(){
+		return "기본타입에 메서드 추가";//앞으로 number타입은 모두 이 함수를 쓸수 있게 된다
+	}
+	//내장 객체인 넘버에 메서드를 추가 가능하다. 더불어 기본타입에서도 호출가능하다
+	document.write(a.method() + "<br>");//기본 타입에 .을 찍으면 객체로 자동 형변환되어 메서드 호출가능
+	//다만, 잘 안쓰이는 듯?
+	var c = 345;
+	document.write(c.method() + "<br>");
+	
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

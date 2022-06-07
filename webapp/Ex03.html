@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>자바스크립트 연습</title>
+
+<script type="text/javascript">
+	var a = 123;
+	var b = new Number(123);
+	
+	document.write(typeof(a) + " : " + a + "<br>");
+	document.write(typeof(b) + " : " + b + "<br><hr>");
+
+	//타입검사를 해보자
+	document.write((typeof(a) == 'number') + "<br>"); // true
+	document.write((typeof(b) == 'number') + "<br><hr>"); //false
+	
+	//둘다 숫자이기에 아래와 같이 정확하게 비교하는걸 권장한다
+	document.write((a.constructor == Number) + "<br>");
+	document.write((b.constructor == Number) + "<br><hr>");
+	
+	//isNaN은 숫자가 아니냐? 라고 물어보는 것이다
+	document.write(!isNaN(a) + "<br>");
+	document.write(!isNaN(b) + "<br><hr>");
+</script>
+
+</head>
+<body>
+	
+</body>
+</html>

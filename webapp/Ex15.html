@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+
+<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=7d65c6f3e15d97c24558194db8044927"></script>
+	
+<script type="text/javascript">
+	function getZipCode(){
+		
+		new daum.Postcode({
+        
+			oncomplete: function(data) {//검색 결과가 data에 담아져 온다
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('zipCode').value = data.zonecode;
+                document.getElementById("addr1").value = data.roadAddress;
+                //document.getElementById("addr2").value = data.jibunAddress;   
+            }
+		}).open();
+	}
+</script>
+
+
+
+<body>
+	<input type="text" name="zipCode" id="zipCode"/>
+	<input type="button" value="우편번호 검색" onclick="getZipCode()"/>
+	<br />
+	<input type="text" name="addr1" id="addr1" size="100" /> <br/>
+	<input type="text" name="addr2" id="addr2" size="100" /> <br/>	
+</body>
+</html>
